@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHOPPAY-Beauty | Premium Cosmetics Store</title>
+  <!-- Link to Separated Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- --- 1. HEADER & NAVBAR --- -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo" onclick="navigateBackToStore()">
+        SHOPPAY<span>-Beauty</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="#" onclick="navigateBackToStore(); setCategory('All')">Beranda</a></li>
+        <li><a href="#catalog-section" onclick="navigateBackToStore(); setCategory('Skincare')">Skincare</a></li>
+        <li><a href="#catalog-section" onclick="navigateBackToStore(); setCategory('Makeup')">Makeup</a></li>
+        <li><a href="#catalog-section" onclick="navigateBackToStore(); setCategory('Haircare')">Haircare</a></li>
+        <li><a href="#catalog-section" onclick="navigateBackToStore(); setCategory('Fragrance')">Fragrance</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Search bar triggering focus (optional) -->
+        <a href="#catalog-section" class="icon-btn" aria-label="Cari Produk">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </a>
+        
+        <!-- Cart Action Trigger -->
+        <button class="icon-btn" onclick="openCart()" aria-label="Keranjang Belanja">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="badge cart-badge" style="display: none;">0</span>
+        </button>
+
+        <!-- Menu Toggle for Mobile responsiveness -->
+        <button class="icon-btn menu-toggle" onclick="openCart()" aria-label="Menu Mobile">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- --- 2. HERO BANNER --- -->
+  <section class="hero" id="hero-banner">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="hero-subtitle">Premium & Natural Cosmetics</span>
+        <h1 class="hero-title display-title">Pancarkan Pesona <span>Alami</span> Bersama Kami</h1>
+        <p class="hero-description">Temukan koleksi produk kecantikan premium, organik, dan halal pilihan di SHOPPAY-Beauty. Diformulasikan dengan teknologi mutakhir untuk menutrisi kulit Anda secara menyeluruh.</p>
+        <div class="hero-cta">
+          <a href="#catalog-section" class="btn btn-primary">Belanja Sekarang</a>
+          <a href="#brand-features" class="btn btn-outline">Mengapa Kami?</a>
+        </div>
+      </div>
+      
+      <div class="hero-image">
+        <div class="hero-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80" alt="SHOPPAY Beauty Hero Banner" referrerPolicy="no-referrer">
+        </div>
+        
+        <!-- Interactive Float Badge -->
+        <div class="hero-badge">
+          <span class="hero-badge-number">100%</span>
+          <span class="hero-badge-label">Organik &<br>Cruelty-Free</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 3. BRAND FEATURES --- -->
+  <section class="features" id="brand-features">
+    <div class="container features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        </div>
+        <h3 class="feature-title">Gratis Ongkir</h3>
+        <p class="feature-desc">Gratis ongkir ke seluruh Indonesia dengan minimum belanja Rp 150.000.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        </div>
+        <h3 class="feature-title">Halal & BPOM</h3>
+        <p class="feature-desc">Seluruh katalog produk teruji dermatologi, ber-BPOM, dan bersertifikasi halal.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+        </div>
+        <h3 class="feature-title">100% Original</h3>
+        <p class="feature-desc">Jaminan keaslian produk langsung dari produsen resmi kecantikan.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 14c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"></path></svg>
+        </div>
+        <h3 class="feature-title">Pelayanan Prima</h3>
+        <p class="feature-desc">Customer service 24/7 siap melayani konsultasi kecantikan gratis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 4. CATALOG SECTION (With live filter & search) --- -->
+  <section class="catalog-section" id="catalog-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title display-title">Katalog Produk Unggulan</h2>
+        <p class="section-subtitle">Temukan skincare, makeup, haircare, dan wewangian mewah berstandar tinggi yang sesuai untuk kebutuhan kecantikan unik kulit Anda.</p>
+      </div>
+
+      <!-- Controls Container -->
+      <div class="catalog-controls">
+        <!-- Live Search Bar -->
+        <div class="search-bar">
+          <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="search-input" placeholder="Cari produk kecantikan, bahan, atau kategori...">
+        </div>
+
+        <!-- Filter Groups -->
+        <div class="filters-group">
+          <!-- Category Tabs -->
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span class="filter-label">Kategori</span>
+            <div class="category-tabs">
+              <button class="tab-btn active" onclick="setCategory('All')">Semua Produk</button>
+              <button class="tab-btn" onclick="setCategory('Skincare')">Skincare</button>
+              <button class="tab-btn" onclick="setCategory('Makeup')">Makeup</button>
+              <button class="tab-btn" onclick="setCategory('Haircare')">Haircare</button>
+              <button class="tab-btn" onclick="setCategory('Fragrance')">Fragrance</button>
+            </div>
+          </div>
+
+          <!-- Price Range Slider -->
+          <div class="price-filter">
+            <div class="price-range-inputs">
+              <span class="filter-label">Maks. Harga:</span>
+              <span id="price-limit-label" style="color: var(--color-primary); font-weight: 700;">Rp 500.000</span>
+            </div>
+            <input type="range" id="price-slider" class="price-slider" min="50000" max="500000" step="10000" value="500000" oninput="handlePriceChange(this.value)">
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Dynamic Product Grid -->
+      <div class="product-grid" id="product-grid">
+        <!-- Products will be generated dynamically by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 5. CHECKOUT SECTION (Simulated) --- -->
+  <section class="checkout-section" id="checkout-section">
+    <div class="container">
+      <div style="margin-bottom: 24px;">
+        <button class="btn btn-outline" onclick="navigateBackToStore()" style="padding: 8px 16px; font-size: 13px;">
+          ← Kembali ke Katalog
+        </button>
+      </div>
+      
+      <h2 class="section-title display-title" style="margin-bottom: 8px;">Formulir Pengiriman & Pembayaran</h2>
+      <p style="color: var(--color-text-muted); margin-bottom: 30px;">Isi data pengiriman di bawah ini untuk mensimulasikan proses checkout dengan Midtrans sandbox gateway.</p>
+      
+      <div class="checkout-grid">
+        <!-- Billing Details Card -->
+        <div class="checkout-card">
+          <h3 class="checkout-card-title">Data Pengiriman</h3>
+          
+          <form id="checkout-shipping-form" onsubmit="submitOrder(e)">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="billing-name">Nama Lengkap *</label>
+                <input type="text" id="billing-name" placeholder="Masukkan nama penerima..." required value="Sopi Maulidia">
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="billing-email">Alamat Email *</label>
+                  <input type="email" id="billing-email" placeholder="contoh@domain.com" required value="sopimaulidia4@gmail.com">
+                </div>
+                <div class="form-group">
+                  <label for="billing-phone">Nomor WhatsApp/HP *</label>
+                  <input type="tel" id="billing-phone" placeholder="Contoh: 08123456789" required value="082124567890">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="billing-address">Alamat Lengkap Rumah *</label>
+                <textarea id="billing-address" rows="3" placeholder="Nama jalan, nomor rumah, RT/RW, kecamatan..." required>Jl. Kebon Jeruk No. 42, RT 05 / RW 03, Kebon Jeruk</textarea>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="billing-city">Kabupaten / Kota *</label>
+                  <input type="text" id="billing-city" placeholder="Contoh: Jakarta Barat" required value="Jakarta Barat">
+                </div>
+                <div class="form-group">
+                  <label for="billing-postal">Kode Pos *</label>
+                  <input type="text" id="billing-postal" placeholder="Masukkan kode pos..." required value="11530">
+                </div>
+              </div>
+
+              <!-- Shipping Methods selection -->
+              <div class="form-group" style="margin-top: 10px;">
+                <label>Metode Pengiriman</label>
+                <div class="radio-options" id="shipping-options">
+                  <div class="radio-card selected" onclick="handleShippingChange('reguler')">
+                    <input type="radio" name="shipping_method" value="reguler" checked>
+                    <div class="radio-details">
+                      <span class="radio-name">Regular Delivery (3 - 5 Hari)</span>
+                      <span class="radio-desc">Rp 15.000 (Gratis jika belanja > Rp 150k)</span>
+                    </div>
+                  </div>
+                  <div class="radio-card" onclick="handleShippingChange('instant')">
+                    <input type="radio" name="shipping_method" value="instant">
+                    <div class="radio-details">
+                      <span class="radio-name">Instant GoSend/Grab Express (1 - 2 Jam)</span>
+                      <span class="radio-desc">Rp 25.000 flat rate</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payment Method selection -->
+              <div class="form-group" style="margin-top: 10px;">
+                <label>Metode Pembayaran (Sandbox)</label>
+                <div class="radio-options" id="payment-options">
+                  <div class="radio-card selected" onclick="handlePaymentMethodChange('qris')">
+                    <input type="radio" name="payment_method" value="qris" checked>
+                    <div class="radio-details">
+                      <span class="radio-name">QRIS - Gopay, OVO, Dana, LinkAja</span>
+                      <span class="radio-desc">Simulasi kode QRIS otomatis terdeteksi realtime</span>
+                    </div>
+                  </div>
+                  <div class="radio-card" onclick="handlePaymentMethodChange('va')">
+                    <input type="radio" name="payment_method" value="va">
+                    <div class="radio-details">
+                      <span class="radio-name">Virtual Account (VA Bank Transfer)</span>
+                      <span class="radio-desc">Simulasi no rek BCA / Mandiri otomatis</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+        <!-- Order Summary Sidecard -->
+        <div>
+          <div class="checkout-card" style="position: sticky; top: 120px;">
+            <h3 class="checkout-card-title">Ringkasan Pesanan</h3>
+            
+            <div class="checkout-items" id="checkout-items-list">
+              <!-- Item rows will be rendered by JS -->
+            </div>
+
+            <div style="border-top: 1px dashed var(--color-bg-200); padding-top: 16px; display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+              <div style="display: flex; justify-content: space-between; font-size: 14px;">
+                <span class="text-muted">Subtotal Produk</span>
+                <span id="checkout-subtotal">Rp 0</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 14px;">
+                <span class="text-muted">Promo Diskon</span>
+                <span id="checkout-discount" style="color: var(--color-success); font-weight: 600;">Rp 0</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 14px;">
+                <span class="text-muted">Biaya Kirim</span>
+                <span id="checkout-delivery">Rp 0</span>
+              </div>
+              
+              <div style="display: flex; justify-content: space-between; font-size: 18px; font-weight: 700; border-top: 1px solid var(--color-bg-200); padding-top: 12px;">
+                <span>Total Belanja</span>
+                <span id="checkout-grandtotal" style="color: var(--color-primary);">Rp 0</span>
+              </div>
+            </div>
+
+            <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('checkout-shipping-form').requestSubmit()">
+              Bayar Sekarang
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- 6. SHOPPING CART DRAWER --- -->
+  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3 class="cart-title">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        Keranjang Belanja
+      </h3>
+      <button class="close-btn" onclick="closeCart()" aria-label="Tutup Keranjang">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="cart-body">
+      <div class="cart-items-container" id="cart-items-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-totals">
+        <div class="cart-total-row">
+          <span class="text-muted">Subtotal Produk</span>
+          <span id="cart-subtotal">Rp 0</span>
+        </div>
+        <div class="cart-total-row">
+          <span class="text-muted">Promo Diskon</span>
+          <span id="cart-discount" style="color: var(--color-success); font-weight: 600;">Rp 0</span>
+        </div>
+        <div class="cart-total-row">
+          <span class="text-muted">Biaya Kirim</span>
+          <span id="cart-delivery">Rp 0</span>
+        </div>
+        <div class="cart-total-row grand-total">
+          <span>Total Estimasi</span>
+          <span id="cart-total">Rp 0</span>
+        </div>
+      </div>
+      
+      <!-- Checkout Navigation -->
+      <button class="btn btn-primary" id="checkout-btn" onclick="navigateToCheckout()">
+        Lanjutkan Ke Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- --- 7. PRODUCT DETAIL MODAL --- -->
+  <div class="modal" id="product-detail-modal">
+    <div class="modal-backdrop" onclick="closeProductDetail()"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeProductDetail()" aria-label="Tutup Detail">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <div class="modal-gallery">
+        <img id="modal-img" src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80" alt="Rose Toner" referrerPolicy="no-referrer">
+      </div>
+
+      <div class="modal-info">
+        <span class="modal-category" id="modal-category">Skincare</span>
+        <h2 class="modal-title" id="modal-title">Rose Toner</h2>
+        
+        <div class="modal-price-row">
+          <span class="modal-price" id="modal-price">Rp 119.000</span>
+        </div>
+
+        <p class="modal-description" id="modal-description">Deskripsi produk singkat.</p>
+
+        <!-- Tabs detail -->
+        <div class="modal-tabs">
+          <div class="modal-tab-header active" onclick="selectModalTab('deskripsi')">Manfaat</div>
+          <div class="modal-tab-header" onclick="selectModalTab('ingredients')">Komposisi</div>
+          <div class="modal-tab-header" onclick="selectModalTab('howtouse')">Cara Pakai</div>
+        </div>
+
+        <div class="modal-tab-content active" id="tab-deskripsi">
+          <!-- Benefits list -->
+        </div>
+        <div class="modal-tab-content" id="tab-ingredients">
+          <!-- Ingredients text -->
+        </div>
+        <div class="modal-tab-content" id="tab-howtouse">
+          <!-- How to use text -->
+        </div>
+
+        <div class="modal-footer-action">
+          <button class="btn btn-primary" style="flex: 1;" onclick="addCurrentProductToCart()">
+            + Masukkan Keranjang Belanja
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- --- 8. SIMULATED PAYMENT GATEWAY MODAL --- -->
+  <div class="payment-modal" id="payment-gateway-modal">
+    <div class="modal-backdrop" onclick="closeSimulatedPayment()"></div>
+    <div class="payment-content">
+      <div class="payment-logo">SHOPPAY Secure Checkout</div>
+      
+      <div class="payment-timer" id="payment-time-countdown">
+        Selesaikan pembayaran dalam: <span id="payment-time-countdown-val">05:00</span>
+      </div>
+
+      <div class="payment-total" id="payment-amount">Rp 0</div>
+      <p style="font-size: 12px; color: var(--color-text-muted); margin-bottom: 20px;">Menunggu pembayaran terverifikasi otomatis...</p>
+
+      <!-- Simulated content box based on payment method -->
+      <div id="payment-instruction-box">
+        <!-- Content injected dynamically by app.js -->
+      </div>
+
+      <button class="btn btn-outline" style="width: 100%; margin-top: 16px; padding: 10px;" onclick="closeSimulatedPayment()">
+        Batal / Ubah Pembayaran
+      </button>
+    </div>
+  </div>
+
+  <!-- --- 9. FOOTER --- -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col-about">
+        <h3 class="footer-logo">SHOPPAY<span>-Beauty</span></h3>
+        <p class="footer-desc">SHOPPAY-Beauty adalah platform e-commerce produk kosmetik premium yang berkomitmen menghadirkan produk perawatan berkualitas tinggi, aman, 100% original, dan bersertifikasi halal/BPOM.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="#" class="social-link" aria-label="Instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="#" class="social-link" aria-label="TikTok"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Toko</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="navigateBackToStore(); setCategory('Skincare')">Skincare Perawatan</a></li>
+          <li><a href="#" onclick="navigateBackToStore(); setCategory('Makeup')">Makeup Riasan</a></li>
+          <li><a href="#" onclick="navigateBackToStore(); setCategory('Haircare')">Haircare Rambut</a></li>
+          <li><a href="#" onclick="navigateBackToStore(); setCategory('Fragrance')">Fragrance Parfum</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Informasi</h4>
+        <ul class="footer-links">
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Syarat & Ketentuan</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Hubungi Kontak</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Buletin Diskon</h4>
+        <p class="footer-desc" style="margin-bottom: 16px;">Dapatkan info promo kecantikan, diskon 15%, dan perilisan produk terbaru dari SHOPPAY-Beauty langsung ke email Anda.</p>
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" placeholder="Alamat email Anda..." required aria-label="Alamat email Anda">
+          <button type="submit" class="btn btn-primary font-display">Daftar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 SHOPPAY-Beauty E-Commerce. All rights reserved. Crafted with ♡ for Sopi Maulidia.</p>
+      
+      <div class="payment-partners">
+        <span class="partner-logo">QRIS</span>
+        <span class="partner-logo">BCA VA</span>
+        <span class="partner-logo">MANDIRI VA</span>
+        <span class="partner-logo">GOPAY</span>
+        <span class="partner-logo">MIDTRANS</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- --- 10. GOOGLE ANALYTICS DUMMY INTEGRATION --- -->
+  <script>
+    // Simulated Google Analytics configuration
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DUMMY123456');
+    console.log("[Google Analytics] Initialized tracking code (G-DUMMY123456) successfully.");
+  </script>
+
+  <!-- Core JavaScript logic separated script -->
+  <script src="js/app.js"></script>
+</body>
+</html>
