@@ -1,6 +1,6 @@
 Link:
 Link Github: https://github.com/sopimaulidia/Beauty-Plann
-
+C:/Users/user/OneDrive/Dokumen/IT%20NEW/vanilla/index.html
 # 🌸 SHOPPAY-Beauty E-Commerce Website & Business Plan
 
 Proyek ini dibangun untuk menghadirkan website e-commerce kosmetik premium **SHOPPAY-Beauty** yang lengkap, responsif, memiliki performa tinggi, serta didukung oleh dokumen rencana bisnis terintegrasi dan petunjuk publikasi ke layanan hosting gratis (GitHub Pages).
