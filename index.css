@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  /* Bold Typography (Crisp Ivory, Rich Black, and Vibrant Rose Theme) */
+  --color-beauty-50: #FAF9F6;   /* Cream ivory background */
+  --color-beauty-100: #FFE4E6;  /* Soft rose background */
+  --color-beauty-200: #FECDD3;  /* Rose border */
+  --color-beauty-300: #FDA4AF;  /* Accent selection bg */
+  --color-beauty-400: #FB7185;  /* Gold alternative rose */
+  --color-beauty-500: #F43F5E;  /* Rose accent primary */
+  --color-beauty-600: #E11D48;  /* Accent dark rose */
+  --color-beauty-700: #BE123C;  /* Hover dark rose */
+  --color-beauty-800: #1A1A1A;  /* Rich Off-Black */
+  --color-beauty-900: #000000;  /* Jet Black */
+  --color-beauty-950: #000000;  /* Heavy Black */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: #FAF9F6;
+  }
+  
+  body {
+    @apply text-[#1A1A1A] antialiased overflow-x-hidden bg-[#FAF9F6];
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    @apply tracking-tight font-extrabold;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF9F6;
+  border-left: 1px solid rgba(0,0,0,0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1A1A1A;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F43F5E;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
